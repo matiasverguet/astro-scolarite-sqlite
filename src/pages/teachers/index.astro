@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import db from "../../lib/db";
+
+const teachers = db.prepare("SELECT * FROM teachers").all();
+---
+
+<Layout title="Enseignants">
+  <h1>Liste des enseignants</h1>
+  <ul>
+    {teachers.map((t: any) => (
+      <li>{t.firstname} {t.lastname} — {t.email}</li>
+    ))}
+  </ul>
+</Layout>
