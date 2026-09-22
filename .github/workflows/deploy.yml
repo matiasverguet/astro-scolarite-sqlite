@@ -24,15 +24,17 @@ jobs:
             echo "Début du déploiement"
             echo "======================================"
 
-            cd /var/www/scolarite/astro-scolarite-sqlite 
-   
+            cd /var/www/scolarite/astro-scolarite-sqlite
+
             echo "Mise à jour du code..."
             git pull origin main
             
             echo "Installation des dépendances..."
+            export PATH="$HOME/.bun/bin:$PATH"
             bun ci
 
             echo "Compilation Astro..."
+            export PATH="$HOME/.bun/bin:$PATH"
             bun run --bun build
 
             echo "Redémarrage de l'application..."
