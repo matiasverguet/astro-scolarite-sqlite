@@ -24,8 +24,8 @@ jobs:
             echo "Début du déploiement"
             echo "======================================"
 
-            cd /var/www/scolarite/astro-scolarite-sqlite
-
+            cd /var/www/scolarite/astro-scolarite-sqlite 
+   
             echo "Mise à jour du code..."
             git pull origin main
             
