@@ -3,3 +3,4 @@ dist/
 .astro/
 data/
 data/*.sqlite
+.env
